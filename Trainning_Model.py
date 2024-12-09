@@ -5,10 +5,12 @@ from bs4 import BeautifulSoup
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.svm import LinearSVC
+from sklearn.neural_network import MLPClassifier
 import joblib
 
+# Load data
 df = pd.read_csv('../input/fraud-email-dataset/fraud_email_.csv')
+
 # Data cleaning
 df.dropna(inplace=True)
 df.isnull().sum()
@@ -46,5 +48,15 @@ def fit_and_save_model(model):
     
     return clf_pipeline
 
+
+# Define and train the MLPClassifier model
+mlp_model = MLPClassifier(
+    hidden_layer_sizes=(100,), # Số neuron trong lớp ẩn
+    activation='relu',         # Hàm kích hoạt (ReLU được dùng phổ biến)
+    solver='adam',             # Phương pháp tối ưu hóa
+    max_iter=200,              # Số lần lặp tối đa
+    random_state=42            # Đảm bảo tính tái lập
+)
+
 # Train the model
-svc_model = fit_and_save_model(LinearSVC())
+mlp_pipeline = fit_and_save_model(mlp_model)
