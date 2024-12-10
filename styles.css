@@ -1,0 +1,75 @@
+/* Reset CSS mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Tổng quan body */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #eceff1, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container chính */
+  .container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px; /* Độ rộng vừa phải */
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các thành phần */
+  }
+  
+  /* Tiêu đề h1 */
+  h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Textarea */
+  textarea {
+    width: 250px; /* Chiều rộng cố định */
+    height: 250px; /* Chiều cao cố định */
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    resize: none; /* Ngăn khả năng thay đổi kích thước */
+    transition: all 0.3s ease;
+  }
+  
+  /* Hiệu ứng focus cho Textarea */
+  textarea:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.5);
+  }
+  
+  /* Button */
+  button {
+    background-color: #6a5acd;
+    color: white;
+    font-size: 1em;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hiệu ứng hover cho Button */
+  button:hover {
+    background-color: #483d8b;
+    transform: scale(1.1);
+  }
+  

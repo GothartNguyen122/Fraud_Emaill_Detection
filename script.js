@@ -3,7 +3,7 @@ document.getElementById("checkButton").addEventListener("click", async () => {
     const resultField = document.getElementById("result");
   
     if (emailContent.trim() === "") {
-      resultField.textContent = "Vui lòng nhập nội dung email.";
+      resultField.textContent = "Please enter title of email.";
       return;
     }
   
@@ -19,12 +19,12 @@ document.getElementById("checkButton").addEventListener("click", async () => {
       if (response.ok) {
         const data = await response.json();
         const isPhishing = data.prediction === 1;
-        resultField.textContent = isPhishing ? "Email này có khả năng là giả mạo!" : "Email này có vẻ an toàn.";
+        resultField.textContent = isPhishing ? "Email bịp đấy đừng tin nhé!" : "Email an toàn yên tâm nhé!";
       } else {
-        resultField.textContent = "Lỗi khi gửi yêu cầu đến server.";
+        resultField.textContent = "Error sending request to server.";
       }
     } catch (error) {
-      resultField.textContent = "Không thể kết nối tới server.";
+      resultField.textContent = "Unable to connect to server.";
     }
   });
   

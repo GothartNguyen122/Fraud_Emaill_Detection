@@ -3,7 +3,6 @@ import joblib
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-
 #Load Model
 model_path = 'fraud_email_model.pkl'
 model = joblib.load(model_path)
