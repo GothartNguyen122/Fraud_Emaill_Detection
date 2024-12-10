@@ -19,7 +19,7 @@ document.getElementById("checkButton").addEventListener("click", async () => {
       if (response.ok) {
         const data = await response.json();
         const isPhishing = data.prediction === 1;
-        resultField.textContent = isPhishing ? "Email bịp đấy đừng tin nhé!" : "Email an toàn yên tâm nhé!";
+        resultField.textContent = isPhishing ? "Email không an toàn,chú ý nhé !" : "Email an toàn ";
       } else {
         resultField.textContent = "Error sending request to server.";
       }
